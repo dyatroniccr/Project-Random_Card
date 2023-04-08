@@ -16,6 +16,7 @@ let when = [
   "while I was praying"
 ];
 
+who.length;
 window.onload = function() {
   //write your code here
   let whoArr = who.map((item, index) => {
@@ -23,14 +24,19 @@ window.onload = function() {
   });
 
   console.log(whoArr);
+  console.log(randomNum(who));
 
   const quest1 = document.querySelector("#quest1");
-  quest1.innerHTML = "Begging";
+  quest1.innerHTML = randomNum(who);
   const quest2 = document.querySelector("#quest2");
-  quest2.innerHTML = whoArr[2];
+  quest2.innerHTML = randomNum(action);
   const quest3 = document.querySelector("#quest3");
-  quest3.innerHTML = "Begging";
+  quest3.innerHTML = randomNum(what);
   const quest4 = document.querySelector("#quest4");
-  quest4.innerHTML = "Begging";
-  console.log("Hello Rigo from the console!");
+  quest4.innerHTML = randomNum(when);
 };
+
+function randomNum(arrSelect) {
+  let number = Math.floor(Math.random() * arrSelect.length);
+  return arrSelect[number];
+}

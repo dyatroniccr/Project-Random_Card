@@ -16,7 +16,11 @@ let when = [
   "while I was praying"
 ];
 
-who.length;
+function randomNum(arrSelect) {
+  let number = Math.floor(Math.random() * arrSelect.length);
+  return arrSelect[number];
+}
+
 window.onload = function() {
   //write your code here
 
@@ -28,13 +32,4 @@ window.onload = function() {
   quest3.innerHTML = "<h5>" + randomNum(what) + "</h5>";
   const quest4 = document.querySelector("#quest4");
   quest4.innerHTML = "<h5>" + randomNum(when) + "</h5>";
-
-  /*when.map((item, index) => {
-    quest4.innerHTML = `<div class="col border" key="${index}"> ${item} </div>`;
-  });*/
 };
-
-function randomNum(arrSelect) {
-  let number = Math.floor(Math.random() * arrSelect.length);
-  return arrSelect[number];
-}

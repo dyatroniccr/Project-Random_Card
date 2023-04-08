@@ -18,5 +18,9 @@ let when = [
 
 window.onload = function() {
   //write your code here
+  who.map(item => {
+    console.log(item);
+  });
+
   console.log("Hello Rigo from the console!");
 };

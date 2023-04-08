@@ -18,9 +18,19 @@ let when = [
 
 window.onload = function() {
   //write your code here
-  who.map(item => {
-    console.log(item);
+  let whoArr = who.map((item, index) => {
+    return item;
   });
 
+  console.log(whoArr);
+
+  const quest1 = document.querySelector("#quest1");
+  quest1.innerHTML = "Begging";
+  const quest2 = document.querySelector("#quest2");
+  quest2.innerHTML = whoArr[2];
+  const quest3 = document.querySelector("#quest3");
+  quest3.innerHTML = "Begging";
+  const quest4 = document.querySelector("#quest4");
+  quest4.innerHTML = "Begging";
   console.log("Hello Rigo from the console!");
 };

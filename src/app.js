@@ -19,12 +19,6 @@ let when = [
 who.length;
 window.onload = function() {
   //write your code here
-  let whoArr = who.map((item, index) => {
-    return item;
-  });
-
-  console.log(whoArr);
-  console.log(randomNum(who));
 
   const quest1 = document.querySelector("#quest1");
   quest1.innerHTML = randomNum(who);
@@ -34,6 +28,10 @@ window.onload = function() {
   quest3.innerHTML = randomNum(what);
   const quest4 = document.querySelector("#quest4");
   quest4.innerHTML = randomNum(when);
+
+  when.map((item, index) => {
+    quest4.innerHTML = `<div class="col border" key="${index}"> ${item} </div>`;
+  });
 };
 
 function randomNum(arrSelect) {

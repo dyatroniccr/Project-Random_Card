@@ -2,9 +2,6 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
 let action = ["ate", "peed", "crushed", "broke"];
 let what = ["my homework", "the keys", "the car"];
@@ -21,15 +18,23 @@ function randomNum(arrSelect) {
   return arrSelect[number];
 }
 
+let excuseView = () => {
+  return (
+    "<h4 >" +
+    randomNum(who) +
+    " " +
+    randomNum(action) +
+    " " +
+    randomNum(what) +
+    " " +
+    randomNum(when) +
+    "</h4>"
+  );
+};
+
 window.onload = function() {
   //write your code here
-
-  const quest1 = document.querySelector("#quest1");
-  quest1.innerHTML = "<h5 >" + randomNum(who) + "</h5>";
-  const quest2 = document.querySelector("#quest2");
-  quest2.innerHTML = "<h5>" + randomNum(action) + "</h5>";
-  const quest3 = document.querySelector("#quest3");
-  quest3.innerHTML = "<h5>" + randomNum(what) + "</h5>";
-  const quest4 = document.querySelector("#quest4");
-  quest4.innerHTML = "<h5>" + randomNum(when) + "</h5>";
+  document.querySelector("#btn").addEventListener("click", () => {
+    document.querySelector("#excuse").innerHTML = excuseView();
+  });
 };

@@ -3,6 +3,7 @@ import "bootstrap";
 import "./style.css";
 
 const getSuitCard = () => {
+  //let suitsCard = ["♠", "♣", "♥", "♦"];
   let suitsCard = ["spade", "club", "heart", "diamond"];
   let randomSuit = suitsCard[Math.floor(Math.random() * 4)];
   return randomSuit;

@@ -2,39 +2,43 @@
 import "bootstrap";
 import "./style.css";
 
-let who = ["The dog", "My grandma", "His turtle", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "the keys", "the car"];
-let when = [
-  "before the class",
-  "right on time",
-  "when I finished",
-  "during my lunch",
-  "while I was praying"
-];
-
-function randomNum(arrSelect) {
-  let number = Math.floor(Math.random() * arrSelect.length);
-  return arrSelect[number];
-}
-
-let excuseView = () => {
-  return (
-    "<h4 >" +
-    randomNum(who) +
-    " " +
-    randomNum(action) +
-    " " +
-    randomNum(what) +
-    " " +
-    randomNum(when) +
-    "</h4>"
-  );
+const getSuitCard = () => {
+  //let suitsCard = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+  let suitsCard = ["spade", "club", "heart", "diamond"];
+  let randomSuit = suitsCard[Math.floor(Math.random() * 3)];
+  return randomSuit;
 };
+
+const getNumberCard = () => {
+  let numbersCard = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "J",
+    "Q",
+    "K"
+  ];
+  let randomCard = numbersCard[Math.floor(Math.random() * 12)];
+  return randomCard;
+};
+function getSuit() {
+  document.querySelector(".card").classList.add(getSuitCard());
+  document.querySelector(".card").classList.remove(getSuitCard());
+}
 
 window.onload = function() {
   //write your code here
   document.querySelector("#btn").addEventListener("click", () => {
-    document.querySelector("#excuse").innerHTML = excuseView();
+    let numberCardJS = document.querySelector(".number");
+
+    console.log(getSuitCard());
+    numberCardJS.innerHTML = getNumberCard();
+    getSuit();
   });
 };

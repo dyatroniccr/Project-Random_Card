@@ -27,18 +27,18 @@ const getNumberCard = () => {
   let randomCard = numbersCard[Math.floor(Math.random() * 12)];
   return randomCard;
 };
-function getSuit() {
-  document.querySelector(".card").classList.add(getSuitCard());
-  document.querySelector(".card").classList.remove(getSuitCard());
+function getCard() {
+  let divCard = document.querySelector(".card");
+  divCard.classList.toggle(getSuitCard());
+  //document.querySelector(".card").classList.remove(getSuitCard());
+  let numberCardJS = document.querySelector(".number");
+  numberCardJS.innerHTML = getNumberCard();
 }
 
 window.onload = function() {
   //write your code here
+  getCard();
   document.querySelector("#btn").addEventListener("click", () => {
-    let numberCardJS = document.querySelector(".number");
-
-    console.log(getSuitCard());
-    numberCardJS.innerHTML = getNumberCard();
-    getSuit();
+    getCard();
   });
 };

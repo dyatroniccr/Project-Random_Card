@@ -3,9 +3,8 @@ import "bootstrap";
 import "./style.css";
 
 const getSuitCard = () => {
-  //let suitsCard = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
   let suitsCard = ["spade", "club", "heart", "diamond"];
-  let randomSuit = suitsCard[Math.floor(Math.random() * 3)];
+  let randomSuit = suitsCard[Math.floor(Math.random() * 4)];
   return randomSuit;
 };
 
@@ -27,12 +26,14 @@ const getNumberCard = () => {
   let randomCard = numbersCard[Math.floor(Math.random() * 12)];
   return randomCard;
 };
+
 function getCard() {
+  let suit = getSuitCard();
   let divCard = document.querySelector(".card");
-  divCard.classList.toggle(getSuitCard());
-  //document.querySelector(".card").classList.remove(getSuitCard());
+  divCard.classList.toggle(suit);
   let numberCardJS = document.querySelector(".number");
   numberCardJS.innerHTML = getNumberCard();
+  console.log(suit);
 }
 
 window.onload = function() {
